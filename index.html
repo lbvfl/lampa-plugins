@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LBVFL</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #0057b7 50%, #ffd700 50%);
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+        h1 {
+            font-size: 150px;
+            color: #000000;
+            text-align: center;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            letter-spacing: 3px;
+            margin: 0;
+            position: absolute;
+            top: 35%; /* Трохи підняли, щоб помістилися подвійні кнопки */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+        .bottom-area {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 95%;
+            max-width: 900px;
+        }
+        /* Головна кнопка */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #24292e;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        .btn:active {
+            transform: translateY(0);
+        }
+        /* Головна сітка: 2 ряди по 5 блоків */
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            width: 100%;
+        }
+        /* Контейнер для кожної пари кнопок */
+        .btn-pair {
+            display: flex;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s;
+        }
+        .btn-pair:hover {
+            transform: translateY(-2px);
+        }
+        /* Спільні стилі для кнопок у парі */
+        .pair-link {
+            display: block;
+            padding: 10px 2px;
+            font-size: 13px;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            white-space: nowrap;
+        }
+        /* Ліва кнопка (NAME) — займає більше місця */
+        .pair-link.name-btn {
+            background-color: #ffffff;
+            color: #24292e;
+            flex-grow: 2; /* Робить кнопку ширшою */
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        /* Права кнопка (Git) */
+        .pair-link.git-btn {
+            background-color: #24292e;
+            color: #ffffff;
+            flex-grow: 1;
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .pair-link:hover {
+            opacity: 0.9;
+        }
+        /* Адаптивність для екранів телефонів */
+        @media (max-width: 768px) {
+            .buttons-grid {
+                grid-template-columns: repeat(2, 1fr); /* Перебудова у 2 колонки */
+            }
+            h1 {
+                font-size: 55px;
+                top: 25%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>LBVFL</h1>
+
+    <div class="bottom-area">
+        <!-- Ваша головна кнопка -->
+        <a class="btn" href="https://github.com/lbvfl/lbvfl.github.io" target="_blank">GitHub →</a>
+
+        <!-- Сітка з парами кнопок -->
+        <div class="buttons-grid">
+            
+            <!-- Ряд 1 -->
+            <div class="btn-pair">
+                <a class="pair-link name-btn" href="https://marv2on.github.io/lampa-plugins-sync/" target="_blank">marv2on</a>
+                <a class="pair-link git-btn" href="https://github.com/marv2on/lampa-plugins-sync" target="_blank">Git</a>
+            </div>
+            <div class="btn-pair">
+                <a class="pair-link name-btn" href="https://levende.github.io/lampa-plugins/" target="_blank">levende</a>
+                <a class="pair-link git-btn" href="https://github.com/levende/lampa-plugins" target="_blank">Git</a> 
+            </div>
+            <div class="btn-pair">
+                <a class="pair-link name-btn" href="https://igorek1986.github.io/lampa-plugins/" target="_blank">igorek1986</a>
+                <a class="pair-link git-btn" href="https://github.com/Igorek1986/lampa-plugins" target="_blank">Git</a> 
+            </div>
+            <div class="btn-pair">
+                <a class="pair-link name-btn" href="https://mylampa1.github.io/" target="_blank">@Cheeze_l</a>
+                <a class="pair-link git-btn" href="https://github.com/mylampa1/mylampa1.github.io" target="_blank">Git</a> 
+            </div>
+            <div class="btn-pair">
+                <a class="pair-link name-btn" href="https://lampame.github.io/main/" target="_blank">LampaME</a>
+                <a class="pair-link git-btn" href="https://github.com/lampame/main" target="_blank">Git</a> 
+            </div>
+            
+            <!-- Ряд 2 -->
+            <div class="btn-pair">
+                <a class="pair-link name-btn" href="https://addonslmp.github.io/" target="_blank">Multiplugin</a>
+                <a class="pair-link git-btn" href="https://github.com/addonslmp/addonslmp.github.io" target="_blank">Git</a>
+            </div>
+            <div class="btn-pair">
+                <a class="pair-link name-btn" href="https://lampa-kit.github.io/" target="_blank">lampa-kit</a>
+                <a class="pair-link git-btn" href="https://github.com/lampa-kit/lampa-kit.github.io" target="_blank">Git</a>
+            </div>
+            <div class="btn-pair">
+                <a class="pair-link name-btn" href="https://ne3nayskas.github.io/plugins/" target="_blank">ne3nayskas</a>
+                <a class="pair-link git-btn" href="https://github.com/ne3nayskas/plugins" target="_blank">Git</a>
+            </div>
+            <div class="btn-pair">
+                <a class="pair-link name-btn" href="https://github.io" target="_blank">    </a>
+                <a class="pair-link git-btn" href="https://github.com" target="_blank">Git</a>
+            </div>
+            <div class="btn-pair">
+                <a class="pair-link name-btn" href="https://github.io" target="_blank">    </a>
+                <a class="pair-link git-btn" href="https://github.com" target="_blank">Git</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
+
